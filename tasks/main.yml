@@ -1,0 +1,35 @@
+---
+# vim:ft=ansible:
+
+# - name: Test items
+#   debug: msg="{{ item }}"
+#   with_dict: deploy_site_dict
+
+
+- debug: var=skip_buildout
+
+- name: Update repositories with mr.developer
+  shell: bin/develop up
+  register: mr_developer_status
+  args:
+    chdir: "{{ plone_instance_path }}"
+  become: yes
+  become_user: "{{ plone_buildout_user }}"
+
+- debug: var=mr_developer_status
+
+- name: Run buildout
+  command: bin/buildout -N
+    chdir={{ plone_instance_path }}
+  become: yes
+  become_user: "{{ plone_buildout_user }}"
+  when: not skip_buildout
+
+# TODO: should iterate over all clients and restared all:
+- name: Supervisor zeoclient1 task are restarted
+  become: yes
+  supervisorctl:
+    name={{ plone_instance_name }}_zeoclient1
+    state=restarted
+
+
