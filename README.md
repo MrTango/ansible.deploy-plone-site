@@ -1,7 +1,16 @@
-# derico.deploy_plone_site
+# ansible.deploy_plone_site
 
 This Ansible role can be used to deploy code to a Plone site.
 It works well in combination with ansible.plone_server.
+
+It basically updates all repositories with mr.developer, reruns buildout and restarts Plone.
+
+## Install
+
+To install the role you can add it to your requirements.yml:
+
+   - src: ansible.deploy_plone_site
+
 
 ## Usage
 
