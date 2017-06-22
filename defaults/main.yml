@@ -1,6 +1,7 @@
 ---
 # vim:ft=ansible:
 plone_buildout_user: plone_buildout
+plone_buildout_cfg: live.cfg
 skip_buildout: no
 skip_checkout: no
 plone_instance_path: "/usr/local/plone-{{ plone_major_version }}/{{ plone_instance_name }}"

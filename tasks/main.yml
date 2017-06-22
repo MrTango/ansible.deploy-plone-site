@@ -19,7 +19,7 @@
 - debug: var=mr_developer_status
 
 - name: Run buildout
-  command: bin/buildout -N
+  command: bin/buildout -N -c {{ plone_buildout_cfg }}
     chdir={{ plone_instance_path }}
   become: yes
   become_user: "{{ plone_buildout_user }}"
