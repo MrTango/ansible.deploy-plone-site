@@ -11,7 +11,6 @@ To install the role you can add it to your requirements.yml:
 
    - src: ansible.deploy_plone_site
 
-
 ## Usage
 
 Create a deploy.yml file:
@@ -31,6 +30,7 @@ Define some needed vars, for example in host_vars or group_vars:
     ---
     plone_instance_name: my-plone
     plone_buildout_user: plone_buildout
+    plone_buildout_cfg: live.cfg
     plone_major_version: '5.0'
 
 Then deploy with:

@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: Maik Derstappen (MrTango)
+  description: Ansible role to deploy and update a Plone site
+  license: BSD
+  min_ansible_version: 2.0
+  platforms:
+    - name: Debian
+      versions:
+        - Wheezy
+        - Jessie
+        - Strech
+  galaxy_tags:
+    - deployment
+    - plone
+    - python
+dependencies: []

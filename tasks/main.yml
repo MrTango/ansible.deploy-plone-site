@@ -1,12 +1,8 @@
 ---
 # vim:ft=ansible:
 
-# - name: Test items
-#   debug: msg="{{ item }}"
-#   with_dict: deploy_site_dict
-
-
 - debug: var=skip_buildout
+- debug: var=skip_checkout
 
 - name: Update repositories with mr.developer
   shell: bin/develop up
